@@ -1,0 +1,175 @@
+﻿@{
+	Layout = null;
+	var i = 0;
+}
+
+<!DOCTYPE html>
+
+<html lang="zh-cn">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>用户信息</title>
+	<link href="~/BootStrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="~/BootStrap/css/buttons.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">
+		* { margin: 0px; padding: 0px; }
+		body { background-color: #bfe4ed; }
+		body li { list-style: none; }
+		/*使整个内容居中*/
+		#content { width: 800px; margin: 0 auto; }
+		#info { width: 800px; height: 300px; background-image: url(../images/bg2.jpg); background-size: 800px 300px; background-repeat: no-repeat; }
+		#userslogo { width: 90px; height: 90px; margin-left: 46%; margin-top: 5%; }
+		#username { color: white; font-family: 'Microsoft JhengHei'; font-size: large; margin-left: 45%; margin-top: 2%; }
+		#synopsis { color: white; font-family: 'Microsoft JhengHei'; font-size: large; margin-left: 44%; margin-top: 2%; }
+		#attention { margin-left: 44%; margin-top: 3%; }
+		#userdata { float: left; margin-top: 1%; height: 50px; width: 220px; background-color: #fefefe; }
+		.followdata { float: left; margin-left: 15%; margin-top: 2%; }
+		#userinfo { float: left; width: 220px; height: 200px; clear: left; margin-top: 2%; background-color: #fefefe; padding-top: 1%; }
+		.infostyle { margin-top: 5%; border-bottom: 1px dashed #d9d9d9; padding-left: 2%; }
+		#relations { width: 220px; height: 200px; background-color: #fefefe; float: left; clear: left; margin-top: 2%; }
+		#relationstxt { height: 40px; border-bottom: 1px dashed #d9d9d9; font-family: 'PingFang SC'; font-size: medium; padding-left: 35%; padding-top: 4%; }
+		.fans { margin-top: 3%; padding-left: 4%; }
+		.img-circle { width: 40px; height: 40px; margin-left: 2%; }
+		#more { margin-left: 30%; margin-top: 2%; }
+		#article { width: 568px; height: 100%; margin-left: 29%; margin-top: 1%; }
+		.weibo { margin-bottom: 5%; background-color: white; border: 1px solid #bcd1d6; }
+	</style>
+</head>
+<body>
+	<div id="content">
+
+		@*头部信息*@
+		<div id="info">
+			@*用户头像*@
+			<img src="../images/userslogo.png" class="img-circle" id="userslogo">
+			@*用户昵称*@
+			<div id="username">@ViewBag.Name</div>
+			@*用户介绍*@
+			<div id="synopsis">@ViewBag.Desc</div>
+			@*关注按钮*@
+			<input type="button" id="attention" class="button button-glow button-rounded button-highlight" value="+关注" />
+		</div>
+
+		@*左侧信息*@
+		<div id="left">
+			@*粉丝和微博信息*@
+			<div id="userdata">
+				<div class="followdata">
+					<ul>
+						<li>11</li>
+						<li>关注</li>
+					</ul>
+				</div>
+				<div class="followdata">
+					<ul>
+						<li>211</li>
+						<li>粉丝</li>
+					</ul>
+				</div>
+				<div class="followdata">
+					<ul>
+						<li>14245</li>
+						<li>微博</li>
+					</ul>
+				</div>
+			</div>
+			@*用户资料*@
+			<div id="userinfo">
+				@*昵称*@
+				<div class="infostyle">昵称：<span style="color: #ffb027">@ViewBag.Name</span></div>
+				@*简介*@
+				<div class="infostyle">简介：@ViewBag.Desc</div>
+				@*所在地*@
+				<div class="infostyle">地址：北京</div>
+				@*签名*@
+				<div class="infostyle">个人签名：@ViewBag.Summary</div>
+				@*博客*@
+				<div class="infostyle">博客：<a href="http://www.devzhou.cn">@ViewBag.Blog</a></div>
+			</div>
+			@*微关系*@
+			<div id="relations">
+				<div id="relationstxt">微关系</div>
+				<div class="fans">
+					他的关注
+					<br />
+					<img src="../images/userslogo.png" class="img-circle" />
+					<img src="../images/ielogo.jpg" class="img-circle" />
+					<img src="../images/mslogo.jpg" class="img-circle" />
+					<img src="../images/userslogo.png" class="img-circle" />
+				</div>
+				<div class="fans">
+					他的粉丝
+					<br />
+					<img src="../images/fflogo.jpg" class="img-circle" />
+					<img src="../images/userslogo.png" class="img-circle" />
+					<img src="../images/mslogo.jpg" class="img-circle" />
+					<img src="../images/userslogo.png" class="img-circle" />
+				</div>
+				<div id="more"><a href="#">查看更多>></a></div>
+			</div>
+		</div>
+        @*收藏*@
+        <a href="#" id="love"><span class="glyphicon glyphicon-star-empty" id="lovepic"></span><span id="lovetxt">收藏</span></a>
+        @*转发*@
+        <a class="glyphicon glyphicon-share" href="#"><span>转发</span></a>
+		@*右侧微博*@
+		<article id="article">
+
+			@foreach(var item in ViewBag.weibo)
+           {
+	             i += 1;
+				 <div id="@i"class="weibo">@item</div>
+           }
+		</article>
+
+	</div>
+	<script src="~/BootStrap/Scripts/jquery-2.2.1.min.js" charset="utf-8" type="text/javascript"></script>
+	<script src="~/BootStrap/Scripts/bootstrap.js" charset="utf-8" type="text/javascript"></script>
+	<script src="~/BootStrap/Scripts/jquery.hover3d.js" charset="utf-8" type="text/javascript"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(
+            function () {
+            	//关注按钮事件
+            	$("#attention").click(
+                    function () {
+                    	var text = $("#attention").val();
+                    	if (text == null) {
+                    		$("#attention").val("+关注");
+                    	}
+                    	else if (text == "+关注") {
+                    		$("#attention").val("已关注");
+                    	}
+                    	else if (text == "已关注") {
+                    		$("#attention").val("取消关注");
+                    	}
+                    	else {
+                    		$("#attention").val("+关注");
+                    	}
+                    }
+                    );
+
+                //收藏
+            	$("#love").click(
+                    function ()
+                    {
+                        $("#lovepic").removeClass().addClass("glyphicon glyphicon-star");
+                    }
+                    )
+            });
+		//微博鼠标悬浮特效
+		$(document).ready(function () {
+			var len = $("#article div").size();
+			var arr = [];
+			for (var i = 0; i < len - 1; i++) {
+				arr[i] = i;
+			}
+			$.each(arr, function (s) {
+				var idvalue = $("#article div").eq(s).attr("id");
+				$("#article").hover3d({
+					selector: "#" + idvalue,
+				})
+			})
+		})
+	</script>
+</body>
+</html>

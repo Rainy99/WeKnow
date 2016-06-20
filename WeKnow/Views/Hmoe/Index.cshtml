@@ -1,0 +1,61 @@
+﻿@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>WeKnow首页</title>
+	<style type="text/css">
+		* { margin: 0px; padding: 0px; }
+		#QuanJu { background-color: #bfe4ed;background-image:url(../../images/Yosemite.jpg);background-repeat:no-repeat;background-size:auto; }
+		#logo { margin-top: 100px; width: 80%; height: 300px; margin-left: 10%; margin-right: 10%; border: 1px solid #fff; }
+		#Re { width: 80%; height: 50px; margin-left: 10%; margin-right: 10%; border: 1px solid #000; }
+		#center { width: 80%; height: 810px; margin-left: 10%; margin-right: 10%; background-color: #fff; }
+		#sleft { width: 30%; height: 800px; margin-top: 5px; margin-left: 3%; border: 1px solid #4cff00; float: left; }
+		#sleft #ShiYongWeiBo { width: 80%; height: 50px; line-height: 50px; margin-left: 10%; margin-right: 10%; border-bottom: 1px inset; }
+		#sleft #ShiYongRen { width: 80%; height: 350px; margin-left: 10%; border: 1px solid #f00; }
+		#sleft #XinJiaRu { width: 80%; height: 50px; line-height: 50px; margin-left: 10%; margin-right: 10%; border-bottom: 1px inset; }
+		#sleft #JiaRuRen { width: 80%; height: 300px; margin-left: 10%; border: 1px solid #f00; }
+		#ShuoWeiBo { width: 40%; height: 800px; margin-top: 5px; margin-left: 3%; border: 1px solid #4cff00; float: left; }
+		#ShuoWeiBo #ZhengZaiShuo { width: 80%; height: 50px; line-height: 50px; margin-left: 10%; margin-right: 10%; border-bottom: 1px inset; }
+		#TopPaiHangBang { width: 20%; height: 800px; margin-top: 5px; margin-right: 3%; border: 1px solid #4cff00; float: right; }
+		#Nbsp { width: 80%; height: 100px; margin-left: 10%; margin-right: 10%; background-color: #a5e7f3; }
+	</style>
+</head>
+<body id="QuanJu">
+	@*头部div用于图片等样式*@
+	<div id="logo">
+		<h2>加入微博，分享快乐</h2>
+	</div>
+	<div id="Re">
+		<h2>正在热议，广播、登录按钮</h2>
+	</div>
+	<div id="center">
+		<div id="sleft">
+			@*标题正在使用微博的人*@
+			<div id="ShiYongWeiBo">文字——正在使用微博的人</div>
+			<div id="ShiYongRen">使用微博的人的头像以及用户名</div>
+			@*标题新加入我们的意见哦国内沪*@
+			<div id="XinJiaRu">文字——新加入我们</div>
+			<div id="JiaRuRen">新加入我们的用户的人的头像以及用户名</div>
+		</div>
+
+		@*和ID为sleft的div同级故而需要浮动*@
+		<div id="ShuoWeiBo">
+			@*固定的div*@
+			<div id="ZhengZaiShuo">大家正在说的</div>
+		</div>
+		@*和ID为sleft和ShuoWeiBo的div同级故而需要浮动*@
+		<div id="TopPaiHangBang">
+			关注排行榜TOP10
+		</div>
+	</div>
+	@*版权处div*@
+	<div id="Nbsp">
+		版权所有
+	</div>
+</body>
+</html>

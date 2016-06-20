@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WeizhiStoreContainer" CdmEntityContainer="WeizhiModel">
+    <EntitySetMapping Name="Area">
+      <EntityTypeMapping TypeName="Weizhi.Area">
+        <MappingFragment StoreEntitySet="Area">
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Attention">
+      <EntityTypeMapping TypeName="Weizhi.Attention">
+        <MappingFragment StoreEntitySet="Attention">
+          <ScalarProperty Name="Aid" ColumnName="Aid" />
+          <ScalarProperty Name="FromUserid" ColumnName="FromUserid" />
+          <ScalarProperty Name="ToUser" ColumnName="ToUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="City">
+      <EntityTypeMapping TypeName="Weizhi.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Collect">
+      <EntityTypeMapping TypeName="Weizhi.Collect">
+        <MappingFragment StoreEntitySet="Collect">
+          <ScalarProperty Name="CollectID" ColumnName="CollectID" />
+          <ScalarProperty Name="Pu_ID" ColumnName="Pu_ID" />
+          <ScalarProperty Name="UseID" ColumnName="UseID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comment">
+      <EntityTypeMapping TypeName="Weizhi.Comment">
+        <MappingFragment StoreEntitySet="Comment">
+          <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+          <ScalarProperty Name="Pu_ID" ColumnName="Pu_ID" />
+          <ScalarProperty Name="UseID" ColumnName="UseID" />
+          <ScalarProperty Name="CommentContent" ColumnName="CommentContent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EducationInfo">
+      <EntityTypeMapping TypeName="Weizhi.EducationInfo">
+        <MappingFragment StoreEntitySet="EducationInfo">
+          <ScalarProperty Name="EducationInfoID" ColumnName="EducationInfoID" />
+          <ScalarProperty Name="UseID" ColumnName="UseID" />
+          <ScalarProperty Name="EducationTypeID" ColumnName="EducationTypeID" />
+          <ScalarProperty Name="SchoolID" ColumnName="SchoolID" />
+          <ScalarProperty Name="SchoolFacultyID" ColumnName="SchoolFacultyID" />
+          <ScalarProperty Name="EnterDateTime" ColumnName="EnterDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EducationType">
+      <EntityTypeMapping TypeName="Weizhi.EducationType">
+        <MappingFragment StoreEntitySet="EducationType">
+          <ScalarProperty Name="EducationTypeID" ColumnName="EducationTypeID" />
+          <ScalarProperty Name="EducationTypeName" ColumnName="EducationTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProfessionInfo">
+      <EntityTypeMapping TypeName="Weizhi.ProfessionInfo">
+        <MappingFragment StoreEntitySet="ProfessionInfo">
+          <ScalarProperty Name="ProfessionInfoID" ColumnName="ProfessionInfoID" />
+          <ScalarProperty Name="UseID" ColumnName="UseID" />
+          <ScalarProperty Name="ProfessionName" ColumnName="ProfessionName" />
+          <ScalarProperty Name="StartDateTime" ColumnName="StartDateTime" />
+          <ScalarProperty Name="EndDateTime" ColumnName="EndDateTime" />
+          <ScalarProperty Name="BranchPosition" ColumnName="BranchPosition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Province">
+      <EntityTypeMapping TypeName="Weizhi.Province">
+        <MappingFragment StoreEntitySet="Province">
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PublishInfo">
+      <EntityTypeMapping TypeName="Weizhi.PublishInfo">
+        <MappingFragment StoreEntitySet="PublishInfo">
+          <ScalarProperty Name="Pu_ID" ColumnName="Pu_ID" />
+          <ScalarProperty Name="UseID" ColumnName="UseID" />
+          <ScalarProperty Name="Pu_Content" ColumnName="Pu_Content" />
+          <ScalarProperty Name="Pu_Date" ColumnName="Pu_Date" />
+          <ScalarProperty Name="PublishTypeID" ColumnName="PublishTypeID" />
+          <ScalarProperty Name="TransmitID" ColumnName="TransmitID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PublishType">
+      <EntityTypeMapping TypeName="Weizhi.PublishType">
+        <MappingFragment StoreEntitySet="PublishType">
+          <ScalarProperty Name="PublishTypeID" ColumnName="PublishTypeID" />
+          <ScalarProperty Name="PublishTypeName" ColumnName="PublishTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SchoolFaculty">
+      <EntityTypeMapping TypeName="Weizhi.SchoolFaculty">
+        <MappingFragment StoreEntitySet="SchoolFaculty">
+          <ScalarProperty Name="SchoolFacultyID" ColumnName="SchoolFacultyID" />
+          <ScalarProperty Name="SchoolFacultyName" ColumnName="SchoolFacultyName" />
+          <ScalarProperty Name="SchoolID" ColumnName="SchoolID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SchoolInfo">
+      <EntityTypeMapping TypeName="Weizhi.SchoolInfo">
+        <MappingFragment StoreEntitySet="SchoolInfo">
+          <ScalarProperty Name="EducationTypeID" ColumnName="EducationTypeID" />
+          <ScalarProperty Name="SchoolID" ColumnName="SchoolID" />
+          <ScalarProperty Name="SchoolName" ColumnName="SchoolName" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserInfo">
+      <EntityTypeMapping TypeName="Weizhi.UserInfo">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserNick" ColumnName="UserNick" />
+          <ScalarProperty Name="UserReallyName" ColumnName="UserReallyName" />
+          <ScalarProperty Name="UserImgs" ColumnName="UserImgs" />
+          <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="Brithday" ColumnName="Brithday" />
+          <ScalarProperty Name="QQ" ColumnName="QQ" />
+          <ScalarProperty Name="InterAdress" ColumnName="InterAdress" />
+          <ScalarProperty Name="UserDesc" ColumnName="UserDesc" />
+          <ScalarProperty Name="LoginTime" ColumnName="LoginTime" />
+          <ScalarProperty Name="Sexid" ColumnName="Sexid" />
+          <ScalarProperty Name="Summary" ColumnName="Summary" />
+          <ScalarProperty Name="Statck" ColumnName="Statck" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

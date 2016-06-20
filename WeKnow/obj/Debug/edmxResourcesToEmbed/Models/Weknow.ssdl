@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Weizhi.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="WeizhiStoreContainer">
+    <EntitySet Name="Area" EntityType="Weizhi.Store.Area" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Attention" EntityType="Weizhi.Store.Attention" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="City" EntityType="Weizhi.Store.City" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Collect" EntityType="Weizhi.Store.Collect" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Comment" EntityType="Weizhi.Store.Comment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EducationInfo" EntityType="Weizhi.Store.EducationInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EducationType" EntityType="Weizhi.Store.EducationType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProfessionInfo" EntityType="Weizhi.Store.ProfessionInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Province" EntityType="Weizhi.Store.Province" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PublishInfo" EntityType="Weizhi.Store.PublishInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PublishType" EntityType="Weizhi.Store.PublishType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SchoolFaculty" EntityType="Weizhi.Store.SchoolFaculty" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SchoolInfo" EntityType="Weizhi.Store.SchoolInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserInfo" EntityType="Weizhi.Store.UserInfo" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="AreaID" />
+    </Key>
+    <Property Name="AreaID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CityID" Type="int" />
+    <Property Name="AreaName" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Attention">
+    <Key>
+      <PropertyRef Name="Aid" />
+    </Key>
+    <Property Name="Aid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FromUserid" Type="int" />
+    <Property Name="ToUser" Type="int" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="nvarchar" MaxLength="20" />
+    <Property Name="ProvinceID" Type="int" />
+  </EntityType>
+  <EntityType Name="Collect">
+    <Key>
+      <PropertyRef Name="CollectID" />
+    </Key>
+    <Property Name="CollectID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Pu_ID" Type="int" />
+    <Property Name="UseID" Type="int" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Pu_ID" Type="int" />
+    <Property Name="UseID" Type="int" />
+    <Property Name="CommentContent" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="EducationInfo">
+    <Key>
+      <PropertyRef Name="EducationInfoID" />
+    </Key>
+    <Property Name="EducationInfoID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UseID" Type="int" />
+    <Property Name="EducationTypeID" Type="int" />
+    <Property Name="SchoolID" Type="int" />
+    <Property Name="SchoolFacultyID" Type="int" />
+    <Property Name="EnterDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EducationType">
+    <Key>
+      <PropertyRef Name="EducationTypeID" />
+    </Key>
+    <Property Name="EducationTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EducationTypeName" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="ProfessionInfo">
+    <Key>
+      <PropertyRef Name="ProfessionInfoID" />
+    </Key>
+    <Property Name="ProfessionInfoID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UseID" Type="int" Nullable="false" />
+    <Property Name="ProfessionName" Type="nvarchar" MaxLength="20" />
+    <Property Name="StartDateTime" Type="datetime" />
+    <Property Name="EndDateTime" Type="datetime" />
+    <Property Name="BranchPosition" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="ProvinceID" />
+    </Key>
+    <Property Name="ProvinceID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProvinceName" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="PublishInfo">
+    <Key>
+      <PropertyRef Name="Pu_ID" />
+    </Key>
+    <Property Name="Pu_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UseID" Type="int" />
+    <Property Name="Pu_Content" Type="nvarchar" MaxLength="280" />
+    <Property Name="Pu_Date" Type="datetime" />
+    <Property Name="PublishTypeID" Type="int" />
+    <Property Name="TransmitID" Type="int" />
+  </EntityType>
+  <EntityType Name="PublishType">
+    <Key>
+      <PropertyRef Name="PublishTypeID" />
+    </Key>
+    <Property Name="PublishTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PublishTypeName" Type="int" />
+  </EntityType>
+  <EntityType Name="SchoolFaculty">
+    <Key>
+      <PropertyRef Name="SchoolFacultyID" />
+    </Key>
+    <Property Name="SchoolFacultyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SchoolFacultyName" Type="nvarchar" MaxLength="20" />
+    <Property Name="SchoolID" Type="int" />
+  </EntityType>
+  <EntityType Name="SchoolInfo">
+    <Key>
+      <PropertyRef Name="SchoolID" />
+    </Key>
+    <Property Name="EducationTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SchoolID" Type="int" Nullable="false" />
+    <Property Name="SchoolName" Type="nvarchar" MaxLength="20" />
+    <Property Name="AreaID" Type="int" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="30" />
+    <Property Name="UserNick" Type="nvarchar" MaxLength="30" />
+    <Property Name="UserReallyName" Type="nvarchar" MaxLength="30" />
+    <Property Name="UserImgs" Type="nvarchar" MaxLength="100" />
+    <Property Name="UserPwd" Type="nvarchar" MaxLength="30" />
+    <Property Name="ProvinceID" Type="int" />
+    <Property Name="CityID" Type="int" />
+    <Property Name="Brithday" Type="datetime" />
+    <Property Name="QQ" Type="int" />
+    <Property Name="InterAdress" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="LoginTime" Type="datetime" />
+    <Property Name="Sexid" Type="int" />
+    <Property Name="Summary" Type="nvarchar" MaxLength="100" />
+    <Property Name="Statck" Type="int" />
+  </EntityType>
+</Schema>

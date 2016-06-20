@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Weizhi" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="WeizhiModel" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Area" EntityType="Weizhi.Area" />
+    <EntitySet Name="Attention" EntityType="Weizhi.Attention" />
+    <EntitySet Name="City" EntityType="Weizhi.City" />
+    <EntitySet Name="Collect" EntityType="Weizhi.Collect" />
+    <EntitySet Name="Comment" EntityType="Weizhi.Comment" />
+    <EntitySet Name="EducationInfo" EntityType="Weizhi.EducationInfo" />
+    <EntitySet Name="EducationType" EntityType="Weizhi.EducationType" />
+    <EntitySet Name="ProfessionInfo" EntityType="Weizhi.ProfessionInfo" />
+    <EntitySet Name="Province" EntityType="Weizhi.Province" />
+    <EntitySet Name="PublishInfo" EntityType="Weizhi.PublishInfo" />
+    <EntitySet Name="PublishType" EntityType="Weizhi.PublishType" />
+    <EntitySet Name="SchoolFaculty" EntityType="Weizhi.SchoolFaculty" />
+    <EntitySet Name="SchoolInfo" EntityType="Weizhi.SchoolInfo" />
+    <EntitySet Name="UserInfo" EntityType="Weizhi.UserInfo" />
+  </EntityContainer>
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="AreaID" />
+    </Key>
+    <Property Name="AreaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityID" Type="Int32" />
+    <Property Name="AreaName" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Attention">
+    <Key>
+      <PropertyRef Name="Aid" />
+    </Key>
+    <Property Name="Aid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FromUserid" Type="Int32" />
+    <Property Name="ToUser" Type="Int32" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="ProvinceID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Collect">
+    <Key>
+      <PropertyRef Name="CollectID" />
+    </Key>
+    <Property Name="CollectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pu_ID" Type="Int32" />
+    <Property Name="UseID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pu_ID" Type="Int32" />
+    <Property Name="UseID" Type="Int32" />
+    <Property Name="CommentContent" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="EducationInfo">
+    <Key>
+      <PropertyRef Name="EducationInfoID" />
+    </Key>
+    <Property Name="EducationInfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UseID" Type="Int32" />
+    <Property Name="EducationTypeID" Type="Int32" />
+    <Property Name="SchoolID" Type="Int32" />
+    <Property Name="SchoolFacultyID" Type="Int32" />
+    <Property Name="EnterDateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="EducationType">
+    <Key>
+      <PropertyRef Name="EducationTypeID" />
+    </Key>
+    <Property Name="EducationTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EducationTypeName" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ProfessionInfo">
+    <Key>
+      <PropertyRef Name="ProfessionInfoID" />
+    </Key>
+    <Property Name="ProfessionInfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UseID" Type="Int32" Nullable="false" />
+    <Property Name="ProfessionName" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="StartDateTime" Type="DateTime" Precision="3" />
+    <Property Name="EndDateTime" Type="DateTime" Precision="3" />
+    <Property Name="BranchPosition" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="ProvinceID" />
+    </Key>
+    <Property Name="ProvinceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProvinceName" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="PublishInfo">
+    <Key>
+      <PropertyRef Name="Pu_ID" />
+    </Key>
+    <Property Name="Pu_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UseID" Type="Int32" />
+    <Property Name="Pu_Content" Type="String" MaxLength="280" Unicode="true" FixedLength="false" />
+    <Property Name="Pu_Date" Type="DateTime" Precision="3" />
+    <Property Name="PublishTypeID" Type="Int32" />
+    <Property Name="TransmitID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PublishType">
+    <Key>
+      <PropertyRef Name="PublishTypeID" />
+    </Key>
+    <Property Name="PublishTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PublishTypeName" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SchoolFaculty">
+    <Key>
+      <PropertyRef Name="SchoolFacultyID" />
+    </Key>
+    <Property Name="SchoolFacultyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SchoolFacultyName" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="SchoolID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SchoolInfo">
+    <Key>
+      <PropertyRef Name="SchoolID" />
+    </Key>
+    <Property Name="EducationTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SchoolID" Type="Int32" Nullable="false" />
+    <Property Name="SchoolName" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="AreaID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="UserNick" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="UserReallyName" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="UserImgs" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="UserPwd" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="ProvinceID" Type="Int32" />
+    <Property Name="CityID" Type="Int32" />
+    <Property Name="Brithday" Type="DateTime" Precision="3" />
+    <Property Name="QQ" Type="Int32" />
+    <Property Name="InterAdress" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="UserDesc" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LoginTime" Type="DateTime" Precision="3" />
+    <Property Name="Sexid" Type="Int32" />
+    <Property Name="Summary" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Statck" Type="Int32" />
+  </EntityType>
+</Schema>
